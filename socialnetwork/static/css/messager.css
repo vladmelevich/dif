@@ -1,0 +1,100 @@
+.friends_block {
+    border: 0.5px #919399 solid;
+    width: 410px;
+    margin: 0 auto;
+    border-radius: 12px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+.friend-list_text {
+    width: 224.73px;
+    height: 27px;
+    margin-top: 31px;
+    margin-left: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28.8px;
+    color: black;
+}
+
+.short_profile_info {
+    margin-left: 10px;
+    margin-top: 80px;
+    display: flex;
+    width: 390px;
+    height: 90px;
+    border: 0.5px #919399 solid;
+    border-radius: 8px;
+}
+
+.short_text {
+    width: 215px;
+    height: 27px;
+    margin-left: 2px;
+    margin-top: 25px;
+    font-family: robot;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.chat {
+    margin-left: 5px;
+}
+.full_block {
+    display: flex;
+    margin-top: 58px;
+    margin-left:298px;
+}
+
+
+.chatting_window_block {
+    width: 976.27px;
+    height: 368px;
+    margin-left: 40px;
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 12px;
+}
+
+.Higher_block {
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+
+}
+
+.Lower_block {
+    border: 0.5px #919399 solid;
+    border-radius: 10px;
+    margin-top: 280px;
+    border-radius: 2px;
+    display: flex;
+    gap: 15px;
+    height:77px;
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 5px;
+}
+
+.chatting_window {
+    width: 815px;
+    height: 52px;
+    border-radius: 2px;
+    outline: none;
+}
+
+.hea_photo {
+width: 78px;
+height: 78px;
+margin-top: 4px;
+margin-left: 25px;
+border-radius: 75px;
+}

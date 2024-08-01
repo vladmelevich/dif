@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <title>his_profile</title>
+</head>
+<body>
+    <div class="nav">
+        <img src="{% static 'img/difbri_logo.png'%}" class="difibri_logo">
+        <ul class="head">
+        <li><button class="button_text" onclick="document.location='{% url 'home'%}'">Вопросы</button></li>
+        <li><button class="button_text" onclick="document.location='{% url 'lider'%}'">Лидеры</button></li>
+        <li><button class="button_text" onclick="document.location='{% url 'difbri'%}'">О нас</button></li>
+        </ul>
+        <button class="icon" onclick="document.location='{% url 'profile'%}'"><img src="{{prof.photo.url}}" class="he_photo"><p class="icon_text">{{prof.nickname}}</p> <img src="img/Vector.png" class="thing"></button>
+        </div>
+    <div class="av">
+    <div class="main-container">
+        <div class="profile_hat">
+            <img src="{{prof.photo.url}}" alt="{{prof.photo}}" class="head_photo">
+            <div class="profile_nav">
+            <h1 class="profile_name">{{prof.nickname}}</h1>
+            <button class="info" id="open-redaction"><img src="{% static 'img/info.png'%}"> Добавить изменения</button>
+            <ul class="blocks">
+                <li><div class="block"><button onclick="document.location='{% url 'chat_friend'%}'"><p class="high_text">Чаты</p><p class="low_text">Чаты</p></button></div></li>
+            </ul>
+        </div>
+        </div>
+        <div class="photo_nav">
+            <div class="photo_nav_text">
+                <p class="te">Фото</p>
+            </div>
+            <div class="photo_search_icon">
+                <img src="{% static 'img/search_icon.png'%}">
+            </div>
+        </div>
+        <div class="photos_blocks">
+        {%for post in photo_let%}
+                <div class="photo_block">
+                <ul class="header_comment_block">
+                    <li><p class="header_comment_text">{{prof.nickname}}</p></li>
+                </ul>
+                    <img src="{{post.photos.url}}" class="post_photo">
+                </div>
+        {%endfor%}
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <label for="file-upload" class="add_photo_button">
+            <img src="{% static 'img/plus.svg' %}">
+            <input type="file" multiple id="file-upload" class="input_photo" style="display: none;" name="photo_lenta">
+        <input type="submit" value="отправить">
+        </label>
+    </form>
+                <div class="modal_redaction" id="redaction-modal-block">
+            <div class="modal_box">
+               <button class="esc" id="close-redaction">Закрыть</button>
+                <form method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    <input type="text" class="filters_window" placeholder="Никнейм" name="nickname">
+                    <p class="text_uper_radio">Сменить фото</p><br>
+                    <br>
+                    <input type="file" multiple name="photos">
+                    <button class="filters_on" id="commit-redaction">Применить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        <script src="{% static 'js/redaction.js'%}"></script>
+</body>
+</html>

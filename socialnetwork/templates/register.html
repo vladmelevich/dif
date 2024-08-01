@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <title>Signing</title>
+</head>
+<body class="container">
+    <div class="nav">
+    <img src="{% static 'img/difbri_logo.png'%}">
+    <button class="login" onclick="document.location='{% url 'log_in'%}'">Вход</button>
+</div>
+<div class="lable">
+<h1 class="text_hub">Регистрация</h1>
+<p class="starting">Для продолжения необходимо зарегистрироватся</p>
+<form method="post">
+    {%csrf_token%}
+    <input type="text" class="window" placeholder="Введите свое имя" name="name">
+    <input type="email" class="window" placeholder="Почта" name="email">
+    <input type="password" class="window" placeholder="Пароль" name="pass1">
+    <input type="password" class="window" placeholder="Подтверждение пароля" name="pass2">
+    {%if error_message%}
+    <p class="error">{{error_message}}</p>
+{%endif%}
+    <button class="signing">Зарегистрироватся</button>
+</form>
+</div>
+
+</body>
+</html>

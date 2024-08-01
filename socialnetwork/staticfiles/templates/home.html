@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <title>Home</title>
+</head>
+<body class="container">
+<div class="nav">
+<img src="{% static 'img/difbri_logo.png'%}" class="difibri_logo">
+<ul class="head">
+<li><button class="button_text" onclick="document.location='{% url 'home'%}'">Вопросы</button></li>
+<li><button class="button_text" onclick="document.location='{% url 'lider'%}'">Лидеры</button></li>
+<li><button class="button_text" onclick="document.location='{% url 'difbri'%}'">О нас</button></li>
+</ul>
+<button class="icon" onclick="document.location='{% url 'profile'%}'"><img src="{{u.photo.url}}" class="he_photo"><h1 class="icon_text">{{u.nickname}}</h1> <img src="{% static 'img/Vector.png'%}" class="thing"></button>
+</div>
+
+<div class="bg_block">
+    <div class="search_block">
+        <form method="post">
+            {%csrf_token%}
+            <input type="text" class="search" placeholder="Найти вопрос" name="wheres">
+        </form>
+        <button class="filter" id="open-filters"><img src="{% static 'img/filter_icon.png'%}"></button>
+    </div>
+        {%for q in duaq%}
+        <div class="quation">
+            <div class="quation_block">
+                <button onclick="document.location='{% url 'his_profile' q.us_q.user.id%}'"><img src="{{q.us_q.photo.url}}" class="hea_photo"></button>
+                <p class="Large_text">{{q.title}}</p>
+            </div>
+            <br>
+            <button class="Task"><img src="{% static 'img/SVG.png'%}"><a href="{% url 'otvet' q.id %}"><p class="Task_text">Ответить</p></a></button>
+        </div>
+        {%endfor%}
+</div>
+<button id="open-quation"><img src="{% static 'img/Quetion.svg'%}" class="Quetion_button"></button>
+<div class="modal_filters" id="filter-modal-block">
+    <div class="modal_box">
+       <button class="esc" id="close-filters">Закрыть</button>
+        <p class="text_uper_radio">Типы</p>
+        <form method="get">
+        <ul class="radio_box_list">
+                <li><label><input type="radio" name="subject" value="physics">Физика</label></li>
+                <li><label><input type="radio" name="subject" value="math">Математика</label></li>
+                <li><label><input type="radio" name="subject" value="chemistry">Химия</label></li>
+                <li><label><input type="radio" name="subject" value="engineering_drawing">Черчение</label></li>
+                <li><label><input type="radio" name="subject" value="english">Английский язык</label></li>
+            </ul>
+            <br>
+            <ul class="radio_box_list">
+                <li><label><input type="radio" name="subject" value="belarusian_language">Белорусский язык</label></li>
+                <li><label><input type="radio" name="subject" value="belarusian_literature">Белорусская литература</label></li>
+                <li><label><input type="radio" name="subject" value="russian_language">Русский язык</label></li>
+                <li><label><input type="radio" name="subject" value="russian_literature">Русская литература</label></li>
+                <li><label><input type="radio" name="subject" value="computer_science">Информатика</label></li>
+            </ul>
+            <br>
+            <ul class="radio_box_list">
+                <li><label><input type="radio" name="subject" value="geography">География</label></li>
+                <li><label><input type="radio" name="subject" value="world_history">Всемирная история</label></li>
+                <li><label><input type="radio" name="subject" value="history_of_belarus">История Беларуси</label></li>
+                <li><label><input type="radio" name="subject" value="social_studies">Обществознание</label></li>
+                <li><label><input type="radio" name="subject" value="biology">Биология</label></li>
+            </ul>
+        <button class="filters_on" id="commit-filters">Применить</button></form>
+    </div>
+</div>
+
+<div class="modal_quation" id="quation-modal-block">
+    <div class="modal_box">
+       <button class="esc" id="close-quation">Закрыть</button>
+        <p>Категории</p>
+        <p class="text_uper_radio">Типы</p>
+        <form method="post">
+            {%csrf_token%}
+            <ul class="radio_box_list">
+                <li><label><input type="radio" name="subject" value="physics">Физика</label></li>
+                <li><label><input type="radio" name="subject" value="math">Математика</label></li>
+                <li><label><input type="radio" name="subject" value="chemistry">Химия</label></li>
+                <li><label><input type="radio" name="subject" value="engineering_drawing">Черчение</label></li>
+                <li><label><input type="radio" name="subject" value="english">Английский язык</label></li>
+            </ul>
+            <br>
+            <ul class="radio_box_list">
+                <li><label><input type="radio" name="subject" value="belarusian_language">Белорусский язык</label></li>
+                <li><label><input type="radio" name="subject" value="belarusian_literature">Белорусская литература</label></li>
+                <li><label><input type="radio" name="subject" value="russian_language">Русский язык</label></li>
+                <li><label><input type="radio" name="subject" value="russian_literature">Русская литература</label></li>
+                <li><label><input type="radio" name="subject" value="computer_science">Информатика</label></li>
+            </ul>
+            <br>
+            <ul class="radio_box_list">
+                <li><label><input type="radio" name="subject" value="geography">География</label></li>
+                <li><label><input type="radio" name="subject" value="world_history">Всемирная история</label></li>
+                <li><label><input type="radio" name="subject" value="history_of_belarus">История Беларуси</label></li>
+                <li><label><input type="radio" name="subject" value="social_studies">Обществознание</label></li>
+                <li><label><input type="radio" name="subject" value="biology">Биология</label></li>
+            </ul>
+            <input type="text" class="filters_window" placeholder="Заголовок" name="title">
+            <input type="text" class="filters_window" placeholder="Содержание" name="content">
+            <button class="filters_on" type="submit">Создать</button>
+        </form>
+    </div>
+</div>
+<script src="{% static 'js/main.js'%}"></script>
+</body>
+</html>

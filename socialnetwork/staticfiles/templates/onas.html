@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <title>his_profile</title>
+</head>
+<body>
+    <div class="nav">
+        <img src="{% static 'img/difbri_logo.png'%}" class="difibri_logo">
+        <ul class="head">
+        <li><button class="button_text" onclick="document.location='{% url 'home'%}'">Вопросы</button></li>
+        <li><button class="button_text" onclick="document.location='{% url 'lider'%}'">Лидеры</button></li>
+        <li><button class="button_text" onclick="document.location='{% url 'difbri'%}'">О нас</button></li>
+        </ul>
+        <button class="icon" onclick="document.location='{% url 'profile'%}'"><img src="{{ue.photo.url}}" class="he_photo"><p class="icon_text">{{ue.nickname}}</p> <img src="img/Vector.png" class="thing"></button>
+        </div>
+    <div style="margin-left:190px; margin-top:20px; width: 1310px;
+    height: 568px;">
+    <h1 style="color: blue;font-size: 22.09px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 31.19px;">Difbri (Different Brilliant) - это социальная сеть, где пользователи могут общаться друг с другом,
+        делиться своими личными фотографиями, и если у них есть вопросы, на которые они не знают ответа,
+        они могут задать их здесь и получить ответ.</h1><br>
+        <h1 style="color: blue;font-size: 22.09px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 31.19px;">Влад-разработчик</h1>
+        <h1 style="color: blue;font-size: 22.09px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 31.19px;">Тихон-дизайнер</h1>
+        <h1 style="color: blue;font-size: 22.09px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 31.19px;">Илья-разработчик</h1>
+
+</div>
+</body>
+</html>

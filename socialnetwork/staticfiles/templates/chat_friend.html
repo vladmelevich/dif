@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <title>Chat_friends</title>
+</head>
+<body>
+    <div class="nav">
+        <img src="{% static 'img/difbri_logo.png'%}" class="difibri_logo">
+        <ul class="head">
+        <li><button class="button_text" onclick="document.location='{% url 'home'%}'">Вопросы</button></li>
+        <li><button class="button_text" onclick="document.location='{% url 'lider'%}''">Лидеры</button></li>
+        <li><button class="button_text" onclick="document.location='{% url 'difbri'%}'">О нас</button></li>
+        </ul>
+        <button class="icon" onclick="document.location='{% url 'profile'%}'"><img src="{{chat_fri.photo.url}}" class="he_photo"><p class="icon_text">{{chat_fri.nickname}}</p> <img src="img/Vector.png" class="thing"></button>
+    </div>
+    <div class="full_block">
+        <div class="friends_block">
+            <p class="friend-list_text">Мои Чаты</p>
+            {%for friends in friend%}
+            <div class="short_profile_info">
+                <button onclick="document.location='{% url 'his_profile' friends.user.id%}'"><img src="{{friends.photo.url}}" class="hea_photo"></button>
+                <button onclick="document.location='{% url 'his_profile' friends.user.id %}'"><p class="short_text">{{friends.nickname}}</p></button>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+</html>

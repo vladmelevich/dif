@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <title>Talk_to_friends</title>
+</head>
+<body>
+    <div class="nav">
+        <img src="{% static 'img/difbri_logo.png'%}" class="difibri_logo">
+        <ul class="head">
+        <li><button class="button_text" onclick="document.location='{% url 'home'%}'">Вопросы</button></li>
+        <li><button class="button_text" onclick="document.location='{% url 'lider'%}'">Лидеры</button></li>
+        <li><button class="button_text" onclick="document.location='{% url 'difbri'%}'">О нас</button></li>
+        </ul>
+        <button class="icon" onclick="document.location='{% url 'profile'%}'"><img src="{{chat.photo.url}}" class="he_photo"><p class="icon_text">{{chat.nickname}}</p> <img src="img/Vector.png" class="thing"></button>
+    </div>
+    <div class="full_block">
+        <div class="chatting_window_block">
+            <div class="Higher_block">
+                <a href="{% url 'his_profile' user2.user.id%}"><p>{{user2.nickname}}</p></a>
+            </div>
+            {% for message in messages %}
+            <div class="message">
+                <p class="nick">{{message.us_chat1.nickname}}</p>
+                <p>{{ message.text }}</p><br>
+            </div>
+        {% endfor %}
+            <div class="Lower_block">
+                <form method="post">
+                    {%csrf_token%}
+                    <input type="text" class="chatting_window" placeholder="Введите сообщение" name="chat">
+                    <button><img src="{% static 'img/send_button.png'%}"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

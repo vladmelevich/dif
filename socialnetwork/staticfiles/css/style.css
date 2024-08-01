@@ -1,0 +1,72 @@
+.container {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+.nav {
+margin-top: 70px;
+justify-content: space-between;
+display: flex;
+ max-height: 100px;
+ padding: 20px, 162px, 20px, 162px;
+ margin-left: 280px;
+}
+
+.head {
+margin-top: 25px;
+text-decoration: none;
+align-items: center;
+display: flex;
+gap: 30px;
+width: 367px;
+height: 27px;
+}
+
+.button_text {
+font-size: 16pt;
+color: black;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.login {
+    width: 80px;
+    height: 57px;
+border-radius: 6.8px;
+background-color: #4973FF;
+color: white;
+margin-right: 200px;
+}
+
+.Head_text {
+    width: 1015px;
+    height: 96px;
+    margin-top: 167px;
+    margin-left: 400px;
+    font-size: 64px;
+    line-height: 96px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.text {
+width: 876px;
+height: 108px;
+margin-left: 450px;
+align-content: center;
+line-height: 36px;
+font-size: 24px;
+}
+
+.start {
+font-family: Georgia, 'Times New Roman', Times, serif;
+margin-left: 760px;
+width: 184px;
+height: 59px;
+border-radius: 8px;
+background-color: #4973FF;
+color: white;
+margin-right: 200px;
+line-height: 27px;
+font-size: 18px;
+padding: 16px, 24px, 16px, 24px;
+}

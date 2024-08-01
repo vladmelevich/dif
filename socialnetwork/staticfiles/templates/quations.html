@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <title>Home</title>
+</head>
+<body class="container">
+<div class="nav">
+<img src="{% static 'img/difbri_logo.png'%}" class="difibri_logo">
+<ul class="head">
+    <li><button class="button_text" onclick="document.location='{% url 'home'%}'">Вопросы</button></li>
+    <li><button class="button_text" onclick="document.location='{% url 'lider'%}'">Лидеры</button></li>
+    <li><button class="button_text" onclick="document.location='{% url 'difbri'%}'">О нас</button></li>
+</ul>
+<button class="icon" onclick="document.location='{% url 'profile'%}'"><img src="{% static 'img/Ellipse 1.png'%}" class="picture"> <p class="icon_text">Аккаунт</p> <img src="{% static 'img/Vector.png'%}" class="thing"></button>
+</div>
+<div class="block_for_quations">
+    <div class="head_quation_block">
+        <div class="head_quation">
+            <button onclick="document.location='{% url 'his_profile' vopr.us_q.user.id%}'"><img src="{{vopr.us_q.photo.url}}" class="hea_photo"></button>
+                <p class="answer_text">{{vopr.title}}</p>
+        </div>
+        <br>
+        <div>
+            <p class="full_text">{{vopr.content}}</p>
+        </div>
+
+    </div>
+    <div class="answers">
+        {%for o in ot%}
+        <div class="answer">
+            <button onclick="document.location='{% url 'his_profile' o.us_utvet.user.id%}'"><img src="{{o.us_utvet.photo.url}}" class="hea_photo"></button>
+            <p class="answer_text">{{o.otvet}}</p>
+        </div>
+        {%endfor%}
+        <button class="answer_button" id="open-answer"><img src="{% static 'img/plus.svg' %}"></button>
+    </div>
+</div>
+
+<div class="modal_answer" id="answer-modal-block">
+    <div class="modal_box">
+       <button class="esc" id="close-answer">Закрыть</button>
+        <form method="post">
+            {%csrf_token%}
+            <input type="text" class="filters_window" placeholder="Ваш ответ" name="otvet">
+            <button class="filters_on" id="commit-answer">Добавить</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="{% static 'js/quation.js'%}"></script>
+</body>
+</html>

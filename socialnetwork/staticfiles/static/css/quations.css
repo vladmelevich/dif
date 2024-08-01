@@ -1,0 +1,80 @@
+.block_for_quations {
+    width: 1310px;
+    min-height: 868px;
+    margin-top:131px;
+    margin-left: 263px;
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 10px;
+}
+
+.head_quation_block {
+    width: 1310px;
+    height: 168px;
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 10px;
+}
+
+.answer {
+    width: 1037px;
+    height: 130.46px;
+    margin-top: 45px;
+    margin-left: 108px;
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 10px;
+    display: flex;
+    gap: 45px;
+}
+
+.answer_text {
+    width: 1500.52px;
+    height: 31.19px;
+    margin-top: 30.79px;
+    margin-right: 560px;
+    font-size: 22.09px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 18.19px;
+}
+
+.head_quation {
+    width: 1037px;
+    height: 50.46px;
+    margin-left: 128px;
+    display: flex;
+    gap: 45px;
+}
+
+.full_text {
+    color: black;
+    margin-top: 35px;
+    margin-left: 108px;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.answer_button {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+}
+
+.modal_answer {
+    background-color: rgba(0, 0, 0, .1);
+    left: 0;
+    top: 0;
+    z-index: 9999999;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    transition: opacity .4s, visibility .4s;
+}
+
+.modal_answer.open {
+    visibility: visible;
+    opacity: 1;
+    }

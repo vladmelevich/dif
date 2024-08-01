@@ -1,0 +1,185 @@
+.main-container {
+    margin-top: 5%;
+    margin-left: 100px;
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 100px;
+
+}
+
+.profile_hat {
+    width: 1200px;
+    height: 145px;
+    margin-top: 50px;
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 12px;
+    display: flex;
+}
+.head_photo {
+width: 105px;
+height: 105px;
+margin-top: 17px;
+margin-left: 50px;
+border-radius: 75px;
+}
+.post_photo {
+    border-radius: 8px;
+    width:100%;
+    height:97%
+}
+.profile_nav {
+    width: 1411px;
+    height: 123px;
+    margin-top: 25px;
+    border-radius: 12px;
+}
+
+.profile_name {
+    width: 318px;
+    height: 26px;
+    font-size: 24px;
+    line-height: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 98px;
+    margin-top: 15px;
+}
+
+.info {
+    margin-left: 98px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #626D7A;
+}
+
+.blocks {
+    display: flex;
+    margin-left: 750px;
+    margin-bottom:5px;
+}
+
+.block {
+    margin-left: 45px;
+    width: 63px;
+    height: 52.57px;
+}
+
+.high_text {
+font-size: 28.4px;
+line-height: 34.08px;
+align-items: center;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.button_friend {
+    margin-left: 45px;
+}
+
+.photos_blocks {
+     width: 1200px;
+    height: 654px;
+    margin-top: 20px;
+    margin-left: 1px;
+    display: flex;
+    column-gap: 95px;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.photo_nav {
+    margin-top:20px;
+    width: 1200px;
+    height: 59.93px;
+    display: flex;
+    border: 0.3px #BFBEC0 solid;
+    border-radius: 11.24px;
+}
+
+.photo_nav_text {
+    margin-left: 20px;
+    margin-top: 19px;
+    width: 57px;
+    height: 23px;
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 12px;
+}
+
+.te{color: #4973FF;
+    font-size: 13.11px;
+    line-height: 16.85px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+text-align: center;
+}
+
+.photo_search_icon {
+    width: 18px;
+    height: 18px;
+    margin-top: 19px;
+    padding-left: 1080px;
+}
+
+.photo_block {
+    border: 0.5px #BFBEC0 solid;
+    border-radius: 12px;
+    width: 439.01px;
+    height: 509.11px;
+    margin-top: 29px;
+    margin-left: 75px;
+}
+
+
+
+.header_comment_block {
+    display: flex;
+}
+
+
+.add_photo_button{position: fixed;
+    bottom: 20px;
+    right: 40px;}
+
+.header_comment_text {
+width: 353.85px;
+height: 13.35px;
+margin-left: 20.09px;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 12.85px;
+line-height: 13.35px;
+font-weight: 500;
+color: #4973FF;
+}
+
+.share {
+    width: 40.06px;
+    height: 26.71px;
+    border-radius: 26.71px;
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+
+.modal_redaction {
+    background-color: rgba(0, 0, 0, .1);
+    left: 0;
+    top: 0;
+    z-index: 9999999;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    visibility: hidden;
+    position: fixed;
+    opacity: 0;
+    transition: opacity .4s, visibility .4s;
+}
+
+.modal_redaction.open {
+    visibility: visible;
+    opacity: 1;
+    }
+

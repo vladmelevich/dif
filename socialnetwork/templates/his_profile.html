@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <title>his_profile</title>
+</head>
+<body>
+    <div class="nav">
+        <img src="{% static 'img/difbri_logo.png'%}" class="difibri_logo">
+        <ul class="head">
+        <li><button class="button_text" onclick="document.location='{% url 'home'%}'">Вопросы</button></li>
+        <li><button class="button_text" onclick="document.location='home.html'">Лидеры</button></li>
+        <li><button class="button_text" onclick="document.location='{% url 'difbri'%}'">О нас</button></li>
+        </ul>
+        <button class="icon" onclick="document.location='{% url 'profile'%}'"><img src="{{uq.photo.url}}" class="he_photo"><p class="icon_text">{{uq.nickname}}</p> <img src="{% static 'img/Vector.png'%}" class="thing"></button>
+        </div>
+    <div class="main-container">
+        <div class="profile_hat">
+            <img src="{{his_prof.photo.url}}" class="head_photo">
+            <div class="profile_nav">
+            <p class="profile_name">{{his_prof.nickname}}</p>
+            <ul class="blocks">
+                <li><button onclick="document.location='{% url 'chat' his_prof.user.id %}'"><p>начать чат </p><img src="{% static 'img/message.png'%}"></button></li>
+            </ul>
+        </div>
+        </div>
+        <div class="photo_nav">
+            <div class="photo_nav_text">
+                <p class="te">Фото</p>
+            </div>
+            <div class="photo_search_icon">
+                <img src="{% static 'img/search_icon.png'%}">
+            </div>
+        </div>
+        <div class="photos_blocks">
+            {%for post in us_photo%}
+                <div class="photo_block">
+                <ul class="header_comment_block">
+                    <li><p class="header_comment_text">{{his_prof.nickname}}</p></li>
+                </ul>
+                    <img src="{{post.photos.url}}" class="post_photo">
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+</html>

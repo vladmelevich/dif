@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <title>Home</title>
+</head>
+<body class="container">
+<div class="nav">
+<img src="{% static 'img/difbri_logo.png'%}">
+<ul class="head">
+<li><button class="button_text" onclick="document.location='{% url 'reg'%}'">Вопросы</button></li>
+<li><button class="button_text" onclick="document.location='{% url 'reg'%}'">Лидеры</button></li>
+<li><button class="button_text" onclick="document.location='{% url 'reg'%}'">О нас</button></li>
+</ul>
+<button class="login" onclick="document.location='{% url 'reg'%}'">Вход</button>
+</div>
+<div>
+    <h1 class="Head_text">Задай вопрос - получи ответ</h1>
+    <p class="text">Difbri - уникальная сеть для обмена информацией в учебных целях либо поиска решения собственных бытовых или рабочих проблем</p>
+    <button class="start" onclick="document.location='{% url 'reg'%}'">Задать вопрос</button>
+</div>
+</body>
+</html>
